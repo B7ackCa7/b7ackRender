@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/b7ackRender.dir/glad.c.o CMakeFiles/b7ackRender.dir/main.cpp.o -o b7ackRender  -lGL -ldl -lglfw 

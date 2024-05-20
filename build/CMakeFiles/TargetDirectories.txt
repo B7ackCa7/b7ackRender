@@ -1,0 +1,3 @@
+/home/yareei/Dev/b7ackRender/build/CMakeFiles/b7ackRender.dir
+/home/yareei/Dev/b7ackRender/build/CMakeFiles/edit_cache.dir
+/home/yareei/Dev/b7ackRender/build/CMakeFiles/rebuild_cache.dir
