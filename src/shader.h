@@ -1,10 +1,10 @@
-#indef SHADER_H
+#ifndef SHADER_H
 #define SHADER_H
 
-#include <glad.glad.h>
+#include <glad/glad.h>
 
 #include <string>
-#include <fstring>
+#include <fstream>
 #include <sstream>
 #include <iostream>
 
@@ -16,13 +16,15 @@ public:
     unsigned int ID;
 
     // constructor reads and builds the shaders
-    Shader(const char* vertexPath, const char* fragmentPath);
+    void load(std::string vertexPath, std::string fragmentPath);
     // use/activate the shader
     void use();
+    // get uniiform location
+    int getUniformLocation(std::string uniformName);
     // utility uniform functions
-    void setBool(const std::string &name, bool value) const;
-    void setInt(const std::string &name, int value) const;
-    void setFloat(const std::string &name, float value) const;
+    void setBool(const std::string& name, bool value) const;
+    void setInt(const std::string& name, int value) const;
+    void setFloat(const std::string& name, float value) const;
 };
 
 #endif

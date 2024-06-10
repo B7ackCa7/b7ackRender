@@ -1,3 +1,4 @@
+#include <cmath>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -70,6 +71,12 @@ int main()
         0, 1, 3, // first triangle
         1, 2, 3
     };*/
+
+    // Query to check the number of vertex attributes /**/
+    int nrAtributes;
+    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAtributes);
+    std::cout << "Maximum vertex attributes supported: " << nrAtributes << std::endl;
+
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -109,6 +116,7 @@ int main()
 
     //  or set them via the texure class
 
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -122,6 +130,20 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        /*// besure to activate the shader program
+        ca7Shader.use(); //use the <--- in place of the gl version [ glUseProgram(ca7Shader) ];
+        // update the uniform color
+        float timeValue = glfwGetTime();
+        float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+        int vertexColorLocation = ca7Shader.getUniformLocation("ourColor");
+        ca7Shader.use();
+        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+        */
+        /*// uniform offset
+        ca7Shader.use();
+        float offset = 0.5f;
+        ca7Shader.setFloat("xOffset", offset);
+        */
         // set active texUnit 
         
 
